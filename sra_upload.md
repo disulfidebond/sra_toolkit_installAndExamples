@@ -39,13 +39,16 @@ The following fields are **required**, meaning if you do not provide a value, th
 * tissue: you must enter a value, 'not collected', or 'not applicable' here
 * all other columns: the values are not required, however, it is **strongly** encouraged for you to do so.  If you have replicates, it is a very good idea to enter this in the description field
 
-Note 1: The file 'Model.organism.animal.1.0.example.xlsx' has been attached, and was used for the MES paper SRA upload.
+Note 1: The file 'sra_upload_example.xlsx' is an example, and is in the folder 'example_files'.  All fields to the right after 'tissue' are not required, but it is a good idea to enter as much information as possible.
+
 Note 2: If you receive an error 'sample name not entered', when you did enter a value for sample name, re-download the template SRA spreadsheet and start over.
 
 7) Metadata:
 This may vary depending on you analysis, and at this step use the provided spreadsheet as a guide ONLY. Create your own from scratch with the appropriate column headers indicated by the web-based table or follow the attached Excel Spreadsheet 'SRA_metadata_example.xlsx'.
 
 8) Upload Data:
+
+* An example metadata upload file 'SRA_metadata_acc_example.xlsx' is in the folder 'example_files'.
 
 To upload the data, there are two recommended ways; but always download the Aspera Connect client here: https://downloads.asperasoft.com/connect2/
 
