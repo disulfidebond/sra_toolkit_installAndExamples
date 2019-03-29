@@ -32,3 +32,6 @@ This writeup provides an example of using basic scripting with the SRA downloade
           sleep 1
         done
         echo 'SRA download complete'
+
+### Comments
+* Do not run AsperaConnect when running the sra-toolkit.  If you do so, you will get unhelpful network socket errors at random intervals.
