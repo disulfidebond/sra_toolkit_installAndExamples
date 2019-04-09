@@ -35,3 +35,32 @@ This writeup provides an example of using basic scripting with the SRA downloade
 
 ### Comments
 * Do not run AsperaConnect when running the sra-toolkit.  If you do so, you will get unhelpful network socket errors at random intervals.
+
+* The default behavior for sra-toolkit is to place the temporary directory within your $HOME directory.  If you are downloading lots of files, make a symbolic link to an external directory:
+
+        pwd
+        # outputs /home
+        ls
+        # outputs Documents Desktop ncbi
+        mv ncbi /Volumes/ExternalDrive/
+        ln -s /Volumes/ExternalDrive/ncbi ncbi
+        
+* It also can be helpful to set up a loop, similar to this:
+
+        let j=1 ; 
+        for i in "${ARR[@]}" ; do 
+          fasterq-dump -p -S $i ; 
+          echo "download complete for $i" ; 
+          if [ "$j" -ne 1 ] ; then 
+            GZNAME=$(echo "${i}_${j}.fastq") ; 
+            gzip $GZNAME ; 
+            let j=1 ; 
+            echo "gzip complete for $GZNAME" ; 
+          else 
+            GZNAME=$(echo "${i}_${j}.fastq") ;  
+            gzip $GZNAME ; 
+            let j=$j+1 ; 
+            echo "gzip complete for $GZNAME" ; 
+          fi ; 
+          sleep 1 ; 
+        done
