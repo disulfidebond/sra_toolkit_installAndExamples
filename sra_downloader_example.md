@@ -47,6 +47,9 @@ This writeup provides an example of using basic scripting with the SRA downloade
         
 * It also can be helpful to set up a loop, similar to this:
 
+        # filenames are in csv file 'sra_file.csv'
+        declare -a ARR
+        ARR=($(<sra_file.csv))
         let j=1 ; 
         for i in "${ARR[@]}" ; do 
           fasterq-dump -p -S $i ; 
